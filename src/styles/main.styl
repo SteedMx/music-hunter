@@ -1,4 +1,61 @@
+$primary-red = #BF1311
+
 body
+  font-family 'Raleway'
   font-size 16px
   margin 0
   padding 0
+  height 10000px
+
+.navigation
+  background-color rgba(80, 80, 80, 0.4)
+  display block
+  position fixed
+  top 0
+  width 100%
+
+  &__container
+    align-content center
+    align-items center
+    color white
+    display flex
+    justify-content space-between
+    margin 0 auto
+    padding 0.5rem 0
+    width 1200px
+
+  &__logo
+    &:hover
+      cursor pointer
+
+    &Image
+      height 45px
+
+  &__tabs
+    font-family 'Raleway'
+    list-style none
+    margin 0
+    padding 0
+
+    &Element
+      border-bottom 0.125rem solid transparent
+      display inline-block
+      margin-right 1rem
+
+      &:last-child
+        margin-right 0
+
+      &:hover
+        border-bottom 0.125rem solid $primary-red
+
+.header
+  background-color black
+  color white
+  padding-top 65px
+  text-align center
+
+  &__container
+    display block
+    margin 0 auto
+    padding 0 0 2rem 0
+
