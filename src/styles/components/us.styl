@@ -5,11 +5,10 @@
   width 100%
 
   &Container
+    box-sizing border-box
     display block
     margin 0 auto
-    padding 2REM 0
-
-    width 1200px
+    padding 2rem 0
 
   &Header
     text-align center
@@ -26,15 +25,13 @@
     margin 0 auto 1rem auto
 
   &Gallery
+    justify-content space-between
     list-style none
 
     display flex
-    justify-content space-between
     padding 0
 
   &Item
-    width 30%
-
     &Header
       background-size cover
       box-sizing border-box
@@ -92,3 +89,63 @@
       &:hover
         cursor pointer
         text-decoration underline
+
+  @media all and (max-width 800px)
+    &Gallery
+      display block
+
+    &Item
+      width 90%
+
+      display flex
+      margin 1rem auto
+
+      &:first-child
+        margin-top 0
+
+      &Header
+        border-radius 0
+        width 40%
+
+      &Body
+        border-radius 0
+        justify-content center
+        width 60%
+
+      &Description
+      &Link
+        text-align left
+
+      &Link
+        margin 1rem 0 0 0
+
+  @media all and (min-width 801px) and (max-width 1200px)
+    &Container
+      padding 2rem
+
+    &Gallery
+      align-items stretch
+
+    &Item
+      align-self stretch
+      width 30%
+
+      &Header
+        align-items center
+        height 200px
+        justify-content center
+
+        display flex
+
+      &Body
+        height 226px
+
+  @media all and (min-width 1201px)
+    &Container
+      width 1200px
+
+    &Item
+      width 384px
+
+      &Body
+        height 160px
