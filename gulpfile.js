@@ -84,14 +84,14 @@ gulp.task('debug:fonts', function () {
 
 gulp.task('dist:javascript', function () {
   browserify('src/javascript/app.js')
-    .bundle()
     .transform(babelify, {
       presets: ['es2015']
     })
+    .bundle()
     .pipe(source('app.js'))
     .pipe(buffer())
     .pipe(uglify())
-    .pipe(gulp.dest('public/javascript'))
+    .pipe(gulp.dest('docs/javascript'))
 })
 
 gulp.task('dist:images', function (cb) {
@@ -137,7 +137,8 @@ gulp.task('gh:javascript', function () {
     .bundle()
     .pipe(source('app.js'))
     .pipe(buffer())
-    .pipe(gulp.dest('public/javascript'))
+    .pipe(uglify())
+    .pipe(gulp.dest('docs/javascript'))
 })
 
 gulp.task('gh:images', function () {
