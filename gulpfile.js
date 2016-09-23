@@ -105,9 +105,9 @@ gulp.task('dist:html', function () {
 })
 
 gulp.task('dist:fonts', function () {
-    gulp
-      .src('src/fonts/**/*.*')
-      .pipe(gulp.dest('public/fonts/'))
+  gulp
+    .src('src/fonts/**/*.*')
+    .pipe(gulp.dest('public/fonts/'))
 })
 
 /*!
