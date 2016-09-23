@@ -6,13 +6,30 @@
   box-shadow inset 0 0 0 1000px $primary-red-transparent
 
   &Container
+    box-sizing border-box
     color $primary-white
     text-align center
 
     display block
     margin 0 auto
-    padding 4rem 0
-    width 1200px
 
-  &Title
-    font-size 2.5rem
+  @media all and (min-width 601px) and (max-width 1200px)
+    &Container
+      padding 2rem
+
+    &Title
+      font-size 2.25rem
+
+    &Slogan
+      font-size 1.2rem
+
+  @media all and (min-width 1201px)
+    &Container
+      padding 3rem 0
+      width 1200px
+
+    &Title
+      font-size 2.5rem
+
+    &Slogan
+      font-size 1.3rem
