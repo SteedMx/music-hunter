@@ -1,0 +1,56 @@
+.Blog
+  background-color $primary-black
+  width 100%
+
+  display block
+  margin 0
+  padding 0
+
+  &Container
+    width 1200px
+
+    display block
+    margin 0 auto
+    padding 2rem 0
+
+  &Header
+    color $primary-white
+    text-align center
+
+  &Title
+    border-bottom 4px solid $primary-red
+    font-size 2rem
+
+    display inline-block
+    margin-bottom 3rem
+
+  &Posts
+    list-style none
+
+  &Post
+    background-color $secondary-black
+    border-radius 0.25rem
+    box-sizing border-box
+
+    display block
+    padding 1rem
+
+    &Header
+      color $primary-red
+      margin-bottom 1rem
+
+    &Title
+      margin 0
+
+    &Link
+      text-decoration none
+
+      &:hover
+        cursor pointer
+        text-decoration underline
+
+    &Text
+      color $primary-white
+      line-height 1.5
+
+      margin 0
