@@ -6,7 +6,9 @@
   padding 0
 
   &Container
+    box-sizing border-box
     white-space nowrap
+    width 1200px
 
     display block
     margin 0 auto
@@ -67,7 +69,7 @@
   @media all and (max-width 600px)
     &Container
       padding 1rem
-      padding 1rem
+      width 100%
 
     &Segment
       width 100%
@@ -80,7 +82,4 @@
   @media all and (min-width 601px) and (max-width 1201px)
     &Container
       padding 2rem
-
-  @media all and (min-width 1201px)
-    &Container
-      widht 1200px
+      width 100%
