@@ -96,8 +96,8 @@ gulp.task('dist:javascript', function () {
 
 gulp.task('dist:images', function (cb) {
   gulp
-    .src('src/images/**/*.')
-    .pipe(gulp.dest('public/images/'))
+    .src(['src/images/**/*.*'])
+    .pipe(gulp.dest('public/images'))
 })
 
 gulp.task('dist:css', function () {
@@ -143,8 +143,8 @@ gulp.task('gh:javascript', function () {
 
 gulp.task('gh:images', function () {
   gulp
-    .src('src/images/**/*.*')
-    .pipe(gulp.dest('public/images/'))
+    .src(['src/images/**/*.*'])
+    .pipe(gulp.dest('docs/images'))
 })
 
 gulp.task('gh:css', function () {
