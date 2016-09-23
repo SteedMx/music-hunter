@@ -12,7 +12,7 @@
 
   &Container
     margin 0 auto
-    width 1200px
+    transition all 0.25s ease
 
   &Tabs
     list-style none
@@ -41,4 +41,21 @@
     transition 0.2s  ease
 
     &:hover
-      border-bottom 4px solid white
+      border-bottom 3px solid white
+
+  @media all and (max-width 600px)
+    &Tabs
+      display none
+
+  @media all and (min-width 601px) and (max-width 1200px)
+    &Container
+      box-sizing border-box
+      font-size 1rem
+      width 100%
+
+      padding 0 1rem
+
+  @media all and (min-width 1201px)
+    &Container
+      font-size 1.2rem
+      width 1200px
