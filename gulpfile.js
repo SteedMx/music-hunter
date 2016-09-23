@@ -4,10 +4,8 @@ const gulp = require('gulp')
 const webserver = require('gulp-webserver')
 const stylus = require('gulp-stylus')
 const pug = require('gulp-pug')
-const concat = require('gulp-concat')
 const uglify = require('gulp-uglify')
 const autoprefixer = require('gulp-autoprefixer')
-const imageop = require('gulp-imagemin')
 
 /*!
  * Development tasks
@@ -35,22 +33,7 @@ gulp.task('watch', function () {
 
 gulp.task('debug:javascript', function () {
   gulp
-    .src([
-      'src/javascript/jquery.js',
-      'src/javascript/z-hamburguer.js',
-      'src/javascript/z-index.js',
-      'src/javascript/slick.min.js',
-      'src/javascript/z-carousel.js'
-    ])
-    .pipe(concat('index.js'))
-    .pipe(gulp.dest('public/javascript'))
-
-  gulp
-    .src([
-      'src/javascript/jquery.js',
-      'src/javascript/z-modal.js'
-    ])
-    .pipe(concat('metodos.js'))
+    .src(['src/javascript/app.js'])
     .pipe(gulp.dest('public/javascript'))
 })
 
@@ -62,10 +45,7 @@ gulp.task('debug:images', function () {
 
 gulp.task('debug:css', function () {
   gulp
-    .src([
-      'src/styles/main.styl',
-      'src/styles/metodos.styl'
-    ])
+    .src(['src/styles/main.styl'])
     .pipe(stylus({
       compress: false
     }))
@@ -74,10 +54,7 @@ gulp.task('debug:css', function () {
 
 gulp.task('debug:html', function () {
   gulp
-    .src([
-      'src/views/index.pug',
-      'src/views/metodos.pug'
-    ])
+    .src(['src/views/index.pug'])
     .pipe(pug({
       pretty: true
     }))
@@ -97,23 +74,7 @@ gulp.task('debug:fonts', function () {
 
 gulp.task('dist:javascript', function () {
   gulp
-    .src([
-      'src/javascript/jquery.js',
-      'src/javascript/z-hamburguer.js',
-      'src/javascript/z-index.js',
-      'src/javascript/slick.min.js',
-      'src/javascript/z-carousel.js'
-    ])
-    .pipe(concat('index.js'))
-    .pipe(uglify())
-    .pipe(gulp.dest('public/javascript'))
-
-  gulp
-    .src([
-      'src/javascript/jquery.js',
-      'src/javascript/z-modal.js'
-    ])
-    .pipe(concat('metodos.js'))
+    .src(['src/javascript/app.js'])
     .pipe(uglify())
     .pipe(gulp.dest('public/javascript'))
 })
@@ -126,10 +87,7 @@ gulp.task('dist:images', function (cb) {
 
 gulp.task('dist:css', function () {
   gulp
-    .src([
-      'src/styles/main.styl',
-      'src/styles/metodos.styl'
-    ])
+    .src(['src/styles/main.styl'])
     .pipe(stylus({
       compress: true,
       user: [autoprefixer()]
@@ -139,10 +97,7 @@ gulp.task('dist:css', function () {
 
 gulp.task('dist:html', function () {
   gulp
-    .src([
-      'src/views/index.pug',
-      'src/views/metodos.pug'
-    ])
+    .src(['src/views/index.pug'])
     .pipe(pug({
       pretty: false
     }))
@@ -161,23 +116,7 @@ gulp.task('dist:fonts', function () {
 
 gulp.task('gh:javascript', function () {
   gulp
-    .src([
-      'src/javascript/jquery.js',
-      'src/javascript/z-hamburguer.js',
-      'src/javascript/z-index.js',
-      'src/javascript/slick.min.js',
-      'src/javascript/z-carousel.js'
-    ])
-    .pipe(concat('index.js'))
-    .pipe(uglify())
-    .pipe(gulp.dest('docs/javascript'))
-
-  gulp
-    .src([
-      'src/javascript/jquery.js',
-      'src/javascript/z-modal.js'
-    ])
-    .pipe(concat('metodos.js'))
+    .src(['src/javascript/app.js'])
     .pipe(uglify())
     .pipe(gulp.dest('docs/javascript'))
 })
@@ -190,10 +129,7 @@ gulp.task('gh:images', function () {
 
 gulp.task('gh:css', function () {
   gulp
-    .src([
-      'src/styles/main.styl',
-      'src/styles/metodos.styl'
-    ])
+    .src(['src/styles/main.styl'])
     .pipe(stylus({
       compress: true,
       user: [autoprefixer()]
@@ -203,10 +139,7 @@ gulp.task('gh:css', function () {
 
 gulp.task('gh:html', function () {
   gulp
-    .src([
-      'src/views/index.pug',
-      'src/views/metodos.pug'
-    ])
+    .src(['src/views/index.pug'])
     .pipe(pug({
       pretty: false
     }))
