@@ -1,0 +1,25 @@
+{
+  "name": "music-hunter",
+  "version": "0.1.0",
+  "description": "Music Hunter Web Site",
+  "main": "public/javascript/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "website",
+    "steed"
+  ],
+  "author": "Michell Ayala <starships@outlook.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "3.9.1",
+    "gulp-autoprefixer": "3.1.1",
+    "gulp-concat": "2.6.0",
+    "gulp-imagemin": "3.0.3",
+    "gulp-pug": "3.0.4",
+    "gulp-stylus": "2.5.0",
+    "gulp-uglify": "2.0.0",
+    "gulp-webserver": "0.9.1"
+  }
+}

@@ -1,0 +1,16 @@
+# modules and dependencies
+node_modules
+
+# auto-saved files
+*~
+*.swp
+
+# log files
+*.log
+log
+*#
+
+# bundled files
+build
+public
+
