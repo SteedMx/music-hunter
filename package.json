@@ -13,11 +13,17 @@
   "author": "Michell Ayala <starships@outlook.com>",
   "license": "ISC",
   "devDependencies": {
+    "babel-core": "6.14.0",
+    "babel-preset-es2015": "6.14.0",
+    "babelify": "7.3.0",
+    "browserify": "13.1.0",
     "gulp": "3.9.1",
     "gulp-autoprefixer": "3.1.1",
     "gulp-pug": "3.0.4",
     "gulp-stylus": "2.5.0",
     "gulp-uglify": "2.0.0",
-    "gulp-webserver": "0.9.1"
+    "gulp-webserver": "0.9.1",
+    "vinyl-buffer": "1.0.0",
+    "vinyl-source-stream": "1.1.0"
   }
 }

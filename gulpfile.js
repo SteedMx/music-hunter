@@ -6,6 +6,10 @@ const stylus = require('gulp-stylus')
 const pug = require('gulp-pug')
 const uglify = require('gulp-uglify')
 const autoprefixer = require('gulp-autoprefixer')
+const browserify = require('browserify')
+const babelify = require('babelify')
+const source = require('vinyl-source-stream')
+const buffer = require('vinyl-buffer')
 
 /*!
  * Development tasks
@@ -33,8 +37,13 @@ gulp.task('watch', function () {
 })
 
 gulp.task('debug:javascript', function () {
-  gulp
-    .src(['src/javascript/app.js'])
+  browserify('src/javascript/app.js')
+    .transform(babelify, {
+      presets: ['es2015']
+    })
+    .bundle()
+    .pipe(source('app.js'))
+    .pipe(buffer())
     .pipe(gulp.dest('public/javascript'))
 })
 
@@ -74,8 +83,13 @@ gulp.task('debug:fonts', function () {
  */
 
 gulp.task('dist:javascript', function () {
-  gulp
-    .src(['src/javascript/app.js'])
+  browserify('src/javascript/app.js')
+    .bundle()
+    .transform(babelify, {
+      presets: ['es2015']
+    })
+    .pipe(source('app.js'))
+    .pipe(buffer())
     .pipe(uglify())
     .pipe(gulp.dest('public/javascript'))
 })
@@ -116,10 +130,14 @@ gulp.task('dist:fonts', function () {
  */
 
 gulp.task('gh:javascript', function () {
-  gulp
-    .src(['src/javascript/app.js'])
-    .pipe(uglify())
-    .pipe(gulp.dest('docs/javascript'))
+  browserify('src/javascript/app.js')
+    .transform(babelify, {
+      presets: ['es2015']
+    })
+    .bundle()
+    .pipe(source('app.js'))
+    .pipe(buffer())
+    .pipe(gulp.dest('public/javascript'))
 })
 
 gulp.task('gh:images', function () {
