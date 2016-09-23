@@ -5,10 +5,49 @@
   background-position center 3rem
 
   display block
-  height 100vh
 
   &Container
     display block
     margin 0 auto
+    padding 4rem 0 2rem 0
+
+  &Header
+    text-align center
+
+    display block
+    margin 0 auto
     padding 0
-    width 1200px
+
+  &Button
+    border 4px solid $primary-red
+    color $primary-red
+    font-size 1.5rem
+    font-weight bold
+    text-align center
+    text-decoration none
+    transition all 0.2 ease
+
+    display inline-block
+    margin 15rem auto 0 auto
+    padding 1rem 1.25rem
+
+    &:hover
+      text-decoration underline
+
+  @media all and (max-width 600px)
+    &Button
+      font-size 1rem
+
+  @media all and (min-width 601px) and (max-width 1200px)
+    &Button
+      font-size 1.2rem
+      padding 1rem
+
+  @media all and (min-width 1201px)
+    height 100vh
+
+    &Container
+      width 1200px
+
+    &Button
+      margin-top 70vh
