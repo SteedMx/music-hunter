@@ -6,7 +6,8 @@
   padding 0
 
   &Container
-    width 1200px
+    box-sizing border-box
+
     margin 0 auto
     padding 2rem 0
 
@@ -41,3 +42,21 @@
 
   &Picture
     max-width 100%
+
+  @media all and (max-width 600px)
+    &Container
+      padding 1rem
+
+    &Item
+      width 49%
+
+  @media all and (min-width 601px) and (max-width 1200px)
+    &Container
+      padding 2rem
+
+    &Item
+      width 24%
+
+  @media all and (min-width 1201px)
+    &Container
+      width 1200px

@@ -7,8 +7,7 @@
   padding 0
 
   &Container
-    width 1200px
-
+    box-sizing border-box
     display block
     margin 0 auto
     padding 2rem 0
@@ -25,7 +24,13 @@
     margin-bottom 3rem
 
   &Posts
+    box-sizing border-box
     list-style none
+    width 100%
+
+    display block
+    margin 0
+    padding 0
 
   &Post
     background-color $secondary-black
@@ -77,3 +82,23 @@
       line-height 1.5
 
       margin 0
+
+  @media all and (max-width 600px)
+    &Container
+      padding 1rem
+
+    &Title
+      font-size 1.5rem
+      margin 0 0 1rem 0
+
+  @media all and (min-width 601px) and (max-width 1200px)
+    &Container
+      padding 2rem
+
+    &Title
+      font-size 1.75rem
+
+  @media all and (min-width 1201px)
+    &Container
+      padding 2rem
+      width 1200px
