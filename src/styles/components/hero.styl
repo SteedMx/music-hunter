@@ -1,9 +1,4 @@
 .Hero
-  background-image url(../images/background-disk.png)
-  background-size contain
-  background-repeat no-repeat
-  background-position center 3rem
-
   display block
 
   &Container
@@ -11,12 +6,21 @@
     margin 0 auto
     padding 4rem 0 2rem 0
 
+  &Disk
+    animation rotateBackground 5s infinite linear
+    background-image url(../images/background-disk.png)
+    display block
+    margin 0 auto
+    height 90vh
+
   &Header
     text-align center
 
     display block
-    margin 0 auto
+    margin -10rem auto
     padding 0
+    position relative
+    z-index 2
 
   &Button
     border 4px solid $primary-red
@@ -28,8 +32,8 @@
     transition all 0.2 ease
 
     display inline-block
-    margin 15rem auto 0 auto
-    padding 1rem 1.25rem
+    margin 0 auto
+    padding 1rem
 
     &:hover
       text-decoration underline
@@ -49,5 +53,9 @@
     &Container
       width 1200px
 
-    &Button
-      margin-top 70vh
+@keyframes rotateBackground
+  0%
+    transform rotate(0deg)
+
+  100%
+    transform rotate(361deg)
