@@ -53,3 +53,6 @@ Gulp will run the next tasks:
 - `gh:css`: will compile all the `.stylus` files ffom `src/styles` into `docs/css` directory as `main.css`.
 - `gh:javascript`: will bundle all javascript files from `src/javascript` into `docs/javascript` directory as `app.js`.
 
+## Licence
+
+MIT
