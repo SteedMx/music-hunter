@@ -105,7 +105,7 @@ gulp.task('dist:css', function () {
     .src(['src/styles/main.styl'])
     .pipe(stylus({
       compress: true,
-      user: [autoprefixer()]
+      use: [autoprefixer()]
     }))
     .pipe(gulp.dest('public/css'));
 })
@@ -152,7 +152,7 @@ gulp.task('gh:css', function () {
     .src(['src/styles/main.styl'])
     .pipe(stylus({
       compress: true,
-      user: [autoprefixer()]
+      use: [autoprefixer()]
     }))
     .pipe(gulp.dest('docs/css'))
 })
