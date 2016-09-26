@@ -1,0 +1,51 @@
+.Popup
+  &[data-visible='false']
+    display none
+
+  &[data-visible='true']
+    background-color rgba(20, 20, 20, 0.6)
+
+    position fixed
+    top 0
+    right 0
+    bottom 0
+    left 0
+    z-index 10
+
+  &Container
+    background-color $primary-black
+    border-radius 0.25rem
+    box-sizing border-box
+    color white
+    width 600px
+
+    display block
+    margin 20vh auto
+    padding 2rem
+
+  &Header
+    align-content center
+    display flex
+    justify-content space-between
+
+  &Title
+    font-family 'Molot'
+    font-size 2rem
+    margin 0
+
+  &Close
+    background-color transparent
+    border 3px solid transparent
+    color white
+    font-family 'Molot'
+    padding 0.5rem
+    transition all 0.1s ease
+
+    &:hover
+      border 3px solid white
+      cursor pointer
+
+  &Text
+    font-family 'Florida'
+    font-size 1.2rem
+    line-height 1.2

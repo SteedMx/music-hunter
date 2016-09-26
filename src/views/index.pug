@@ -2,9 +2,13 @@ doctype html
 html
   head
     meta(charset='utf-8')
-    meta(name='viewport', content='width=device-width, inital-scale=1')
+    meta(name='viewport', content='width=device-width')
     link(href='css/main.css', rel='stylesheet')
   body
+    include includes/popups/how.pug
+    include includes/popups/why.pug
+    include includes/popups/what.pug
+
     include includes/nav.pug
     include includes/hero.pug
     include includes/banner.pug
