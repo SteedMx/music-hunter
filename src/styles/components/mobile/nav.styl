@@ -1,0 +1,62 @@
+.NavMobile
+  background-color $primary-red
+  display none
+
+  &Bar
+    display block
+
+  &Tabs
+    display block
+
+  &Logo
+    height 40px
+    margin 0
+
+  @media all and (max-width 600px)
+    display block
+    position fixed
+    top 0
+    right 0
+    left 0
+    z-index 5
+
+    &Bar
+      align-items center
+      box-sizing border-box
+      display flex
+      justify-content space-between
+      padding 1rem
+
+    &Menu
+      border 2px solid white
+      border-radius 0.25rem
+      color white
+      font-family 'Florida'
+      font-size 0.9rem
+      padding 0.5rem
+
+      &:hover
+        cursor pointer
+
+    &Tabs
+      &[data-visible='false']
+        display none
+
+      &[data-visible='true']
+        background-color #ce2b1e
+        list-style none
+        margin 0
+        padding 0
+
+      &Link
+        box-sizing border-box
+        color white
+        font-family 'Florida'
+        font-weight bold
+        display block
+        padding 1rem
+        transition all 0.1s ease
+
+        &:hover
+          background-color $primary-red
+          cursor pointer

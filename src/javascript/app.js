@@ -41,3 +41,23 @@ howClose.addEventListener('click', function (event) {
   event.preventDefault()
   howPopup.dataset.visible = 'false'
 })
+
+const navMobileMenu = document.querySelector('#nav-mobile-menu')
+const navMobileTabs = document.querySelector('#nav-mobile-tabs')
+const navMobileLinks = document.querySelectorAll('.NavMobileTabsLink')
+
+navMobileMenu.addEventListener('click', function (event) {
+  event.preventDefault()
+
+  if (navMobileTabs.dataset.visible === 'true') {
+    navMobileTabs.dataset.visible = 'false'
+  } else {
+    navMobileTabs.dataset.visible = 'true'
+  }
+})
+
+navMobileLinks.forEach(function (link) {
+  link.addEventListener('click', function (event) {
+    navMobileTabs.dataset.visible = 'false'
+  })
+})
