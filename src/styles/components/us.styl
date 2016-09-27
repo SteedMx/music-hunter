@@ -92,7 +92,6 @@
         cursor pointer
         text-decoration underline
 
-
   @media all and (max-width 600px)
     &Container
       padding 5rem 1rem 1rem 1rem
@@ -100,7 +99,28 @@
     &Title
       font-size 1.5rem
 
-  @media all and (max-width 800px)
+    &Gallery
+      display block
+
+    &Item
+      display block
+      margin 1rem auto
+
+      &:first-child
+        margin-top 0
+
+      &:last-child
+        margin-bottom 0
+
+      &Header
+        display block
+        width 100%
+
+      &Body
+        display block
+        width 100%
+
+  @media all and (min-width 601px) and (max-width 800px)
     &Gallery
       display block
 
