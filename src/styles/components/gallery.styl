@@ -11,6 +11,45 @@
     margin 0 auto
     padding 2rem 0
 
+  &Viewer
+    &[data-visible='false']
+      display none
+
+    &[data-visible='true']
+      background-color rgba(200, 200, 200, 0.8)
+      display block
+      position fixed
+      top 0
+      right 0
+      bottom 0
+      left 0
+      z-index 10
+
+    &Container
+      height 100%
+      width 100%
+
+    &Header
+      background-color $primary-white
+      padding 1rem
+      width 100%
+
+    &Close
+      background-color transparent
+      border 3px solid $primary-black
+      color $primary-black
+      font-weight bold
+      padding 0.5rem 0.75rem
+
+      &:hover
+        cursor pointer
+
+    &Image
+      width auto
+      height 90%
+      display block
+      margin 0 auto
+
   &Header
     text-align center
 
@@ -54,6 +93,22 @@
     &Title
       font-size 1.5rem
 
+    &Viewer
+      &Header
+        padding 0.75rem 1rem
+
+      &Close
+        font-size 0.8rem
+        padding 0.25rem 0.5rem
+
+      &Box
+        box-sizing border-box
+        padding 1rem
+
+      &Image
+        height auto
+        width 100%
+
   @media all and (min-width 601px) and (max-width 1200px)
     &Container
       padding 2rem
@@ -61,6 +116,23 @@
     &Item
       width 24%
 
+    &Viewer
+      &Box
+        box-sizing border-box
+        padding 1rem
+
+      &Image
+        width 100%
+
   @media all and (min-width 1201px)
     &Container
       width 1200px
+
+    &Viewer
+      &Box
+        box-sizing border-box
+        height 90%
+        padding 1rem
+
+      &Image
+        height 90%
