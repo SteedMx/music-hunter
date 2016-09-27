@@ -34,6 +34,7 @@ gulp.task('watch', function () {
   gulp.watch('src/javascript/**/*.js', ['debug:javascript'])
   gulp.watch('src/views/**/*.pug', ['debug:html'])
   gulp.watch('src/images/**/*.*', ['debug:images'])
+  gulp.watch('src/fonts/**/*.*', ['debug:fonts'])
 })
 
 gulp.task('debug:javascript', function () {
