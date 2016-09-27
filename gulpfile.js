@@ -72,7 +72,6 @@ gulp.task('debug:html', function () {
     .pipe(gulp.dest('public'))
 })
 
-
 gulp.task('debug:fonts', function () {
   gulp
     .src('src/fonts/**/*.*')
@@ -152,8 +151,7 @@ gulp.task('gh:css', function () {
   gulp
     .src(['src/styles/main.styl'])
     .pipe(stylus({
-      compress: true,
-      use: [autoprefixer()]
+      compress: true
     }))
     .pipe(gulp.dest('docs/css'))
 })
