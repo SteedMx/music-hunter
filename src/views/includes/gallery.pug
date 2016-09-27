@@ -1,4 +1,11 @@
 article(class='Gallery', id='gallery')
+  section(class='GalleryViewer', data-visible='false')
+    div(class='GalleryViewerContainer')
+      header(class='GalleryViewerHeader')
+        button(class='GalleryViewerClose') CERRAR
+      div(class='GalleryViewerBox')
+        img(class='GalleryViewerImage', src='')
+
   div(class='GalleryContainer')
     header(class='GalleryHeader')
       h2(class='GalleryTitle') GALERÍA

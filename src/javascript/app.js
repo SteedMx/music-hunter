@@ -1,5 +1,9 @@
 'use strict'
 
+/*!
+ * Popup
+ */
+
 const whatLink = document.querySelector('#what')
 const whatPopup = document.querySelector('#what-popup')
 const whatClose = document.querySelector('#what-close')
@@ -42,6 +46,10 @@ howClose.addEventListener('click', function (event) {
   howPopup.dataset.visible = 'false'
 })
 
+/*!
+ * Mobile Menu
+ */
+
 const navMobileMenu = document.querySelector('#nav-mobile-menu')
 const navMobileTabs = document.querySelector('#nav-mobile-tabs')
 const navMobileLinks = document.querySelectorAll('.NavMobileTabsLink')
@@ -60,4 +68,25 @@ navMobileLinks.forEach(function (link) {
   link.addEventListener('click', function (event) {
     navMobileTabs.dataset.visible = 'false'
   })
+})
+
+/*!
+ * Gallery
+ */
+
+const galleryImages = document.querySelectorAll('.GalleryPicture')
+const galleryViewer = document.querySelector('.GalleryViewer')
+const galleryViewerImage = document.querySelector('.GalleryViewerImage')
+const galleryViewerClose = document.querySelector('.GalleryViewerClose')
+
+galleryImages.forEach(function (image) {
+  image.addEventListener('click', function () {
+    galleryViewer.dataset.visible = 'true'
+    galleryViewerImage.src = image.src
+  })
+})
+
+galleryViewerClose.addEventListener('click', function (event) {
+  event.preventDefault()
+  galleryViewer.dataset.visible = 'false'
 })
