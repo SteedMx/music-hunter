@@ -34,13 +34,11 @@
       width 100%
 
     &Tab
-      display flex
-      justify-content space-between
       margin 0 auto
       padding 0.5rem 0
       width 1200px
 
-    &Button
+    &Close
       background-color transparent
       border 3px solid $primary-black
       color $primary-black
@@ -50,9 +48,24 @@
       &:hover
         cursor pointer
 
+    &Prev
+    &Next
+      color $primary-white
+      font-size 2rem
+      position absolute
+      top 45vh
+
+      &:hover
+        cursor pointer
+
+    &Prev
+      left 20vh
+
+    &Next
+      right 20vh
+
     &Image
-      width auto
-      height 90%
+      width 1200px
       display block
       margin 0 auto
 
@@ -111,9 +124,26 @@
         box-sizing border-box
         padding 1rem
 
+      &Tab
+        padding 0.5rem 1rem
+
+      &Close
+        font-size 0.9rem
+        padding 0.35rem
+
       &Image
         height auto
         width 100%
+
+      &Prev
+      &Next
+        top 140px
+
+      &Prev
+        left 4vh
+
+      &Next
+        right 4vh
 
   @media all and (min-width 601px) and (max-width 1200px)
     &Container
@@ -129,6 +159,19 @@
 
       &Image
         width 100%
+
+      &Tab
+        padding 0.5rem 1rem
+
+      &Prev
+      &Next
+        top 30vh
+
+      &Prev
+        left 5vh
+
+      &Next
+        right 5vh
 
   @media all and (min-width 1201px)
     &Container

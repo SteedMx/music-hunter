@@ -1,13 +1,12 @@
 article(class='Gallery', id='gallery')
   section(class='GalleryViewer', data-visible='false')
+    i(class='GalleryViewerPrev fa fa-arrow-circle-left', aria-hidden='true')
+    i(class='GalleryViewerNext fa fa-arrow-circle-right', aria-hidden='true')
+
     div(class='GalleryViewerContainer')
       header(class='GalleryViewerHeader')
         div(class='GalleryViewerTab')
-          button(class='GalleryViewerButton', id='view-close') CERRAR
-
-          div
-            button(class='GalleryViewerButton', id='view-prev') ANTERIOR
-            button(class='GalleryViewerButton', id='view-next') SIGUIENTE
+          button(class='GalleryViewerClose', id='view-close') CERRAR
 
       div(class='GalleryViewerBox')
         img(class='GalleryViewerImage', src='')

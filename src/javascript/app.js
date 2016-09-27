@@ -78,8 +78,8 @@ const galleryImages = document.querySelectorAll('.GalleryPicture')
 const galleryViewer = document.querySelector('.GalleryViewer')
 const galleryViewerImage = document.querySelector('.GalleryViewerImage')
 const galleryViewerClose = document.querySelector('#view-close')
-const galleryNext = document.querySelector('#view-next')
-const galleryPrev = document.querySelector('#view-prev')
+const galleryNext = document.querySelector('.GalleryViewerNext')
+const galleryPrev = document.querySelector('.GalleryViewerPrev')
 
 const imageNumber = galleryImages.length
 let imageIndex = 0
