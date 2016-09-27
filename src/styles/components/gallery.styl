@@ -31,10 +31,16 @@
 
     &Header
       background-color $primary-white
-      padding 1rem
       width 100%
 
-    &Close
+    &Tab
+      display flex
+      justify-content space-between
+      margin 0 auto
+      padding 0.5rem 0
+      width 1200px
+
+    &Button
       background-color transparent
       border 3px solid $primary-black
       color $primary-black
@@ -45,8 +51,8 @@
         cursor pointer
 
     &Image
-      width auto
-      height 90%
+      height auto
+      width 1200px
       display block
       margin 0 auto
 
@@ -97,10 +103,7 @@
       font-size 1.5rem
 
     &Viewer
-      &Header
-        padding 0.75rem 1rem
-
-      &Close
+      &Button
         font-size 0.8rem
         padding 0.25rem 0.5rem
 

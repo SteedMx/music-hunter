@@ -77,16 +77,44 @@ navMobileLinks.forEach(function (link) {
 const galleryImages = document.querySelectorAll('.GalleryPicture')
 const galleryViewer = document.querySelector('.GalleryViewer')
 const galleryViewerImage = document.querySelector('.GalleryViewerImage')
-const galleryViewerClose = document.querySelector('.GalleryViewerClose')
+const galleryViewerClose = document.querySelector('#view-close')
+const galleryNext = document.querySelector('#view-next')
+const galleryPrev = document.querySelector('#view-prev')
 
-galleryImages.forEach(function (image) {
+const imageNumber = galleryImages.length
+let imageIndex = 0
+
+galleryImages.forEach(function (image, index) {
   image.addEventListener('click', function () {
     galleryViewer.dataset.visible = 'true'
     galleryViewerImage.src = image.src
+    imageIndex = index
   })
 })
 
 galleryViewerClose.addEventListener('click', function (event) {
   event.preventDefault()
   galleryViewer.dataset.visible = 'false'
+})
+
+galleryNext.addEventListener('click', function () {
+  let nextIndex = imageIndex + 1
+
+  if (nextIndex >= imageNumber) {
+    nextIndex = 0
+  }
+
+  imageIndex = nextIndex
+  galleryViewerImage.src = galleryImages[imageIndex].src
+})
+
+galleryPrev.addEventListener('click', function () {
+  let prevIndex = imageIndex - 1
+
+  if (prevIndex <= 0) {
+    prevIndex = imageNumber - 1
+  }
+
+  imageIndex = prevIndex
+  galleryViewerImage.src = galleryImages[imageIndex].src
 })
