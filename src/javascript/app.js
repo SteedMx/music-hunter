@@ -126,13 +126,13 @@ galleryPrev.addEventListener('click', function () {
 const Axios = require('axios')
 
 const posts = [{
-  "url": "es-negro",
-  "title": "michel",
-  "tags": ["negro","nasty","grosero"],
-  "previewText": "alsfugasfouasfa",
-  "previewImage": "http://zura.space",
-  "insertedAt": "2016-09-28T00:50:21Z",
-  "html": "<p>kasuhfgasofugsaouf<em>gyaufgsai</em></p>"
+  'url': 'es-negro',
+  'title': 'michel',
+  'tags': ['negro','nasty','grosero'],
+  'previewText': 'alsfugasfouasfa',
+  'previewImage': 'http://zura.space',
+  'insertedAt': '2016-09-28T00:50:21Z',
+  'html': '<p>kasuhfgasofugsaouf<em>gyaufgsai</em></p>'
 }]
 
 const postsContainer = document.querySelector('.BlogPosts')
@@ -158,4 +158,80 @@ posts.forEach(function (post) {
   item.appendChild(body)
 
   postsContainer.appendChild(item)
+})
+
+/*!
+ * Contact Email Send
+ */
+
+const contactForm = document.querySelector('.ContactForm')
+
+const successClose = document.querySelector('#success-close')
+const failureClose = document.querySelector('#failure-close')
+
+const successModal = document.querySelector('#success-popup')
+const failureModal = document.querySelector('#failure-popup')
+
+const mandrillApiKey = require('../../.env').mandrillApiKey
+
+successClose.addEventListener('click', function () {
+  successModal.dataset.active = 'false'
+})
+
+failureClose.addEventListener('click', function () {
+  failureModal.dataset.active = 'false'
+})
+
+contactForm.addEventListener('submit', function (event) {
+  event.preventDefault()
+
+  const name = event.target.name
+  const message = event.target.message
+  const email = event.target.email
+
+  Axios
+    .post('https://mandrillapp.com/api/1.0/messages/send.json', {
+      'key': mandrillApiKey,
+      'message': {
+          'html': '<h2>Hi!</h2>',
+          'subject': name.toString(),
+          'from_email': email.toString(),
+          'from_name': name.toString(),
+          'to': [
+              {
+                  'email': 'hola@musichunter.com',
+                  'name': name.toString(),
+                  'type': 'to'
+              }
+          ],
+          'headers': {
+              'Reply-To': ''
+          },
+          'important': false,
+          'track_opens': null,
+          'track_clicks': null,
+          'auto_text': null,
+          'auto_html': null,
+          'inline_css': null,
+          'url_strip_qs': null,
+          'preserve_recipients': null,
+          'view_content_link': null,
+          'bcc_address': 'message.bcc_address@example.com',
+          'tracking_domain': null,
+          'signing_domain': null,
+          'return_path_domain': null,
+          'merge': true,
+          'metadata': {
+              'website': 'www.example.com'
+          }
+      },
+      'async': false,
+      'ip_pool': 'Main Pool'
+    })
+    .then(function (res) {
+      successModal.dataset.active = 'true'
+    })
+    .catch(function () {
+      successModal.dataset.active = 'true'
+    })
 })

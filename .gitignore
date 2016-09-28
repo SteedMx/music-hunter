@@ -13,3 +13,6 @@ log
 # bundled files
 build
 public
+
+# env vars
+.env
