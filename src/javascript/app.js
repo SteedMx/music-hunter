@@ -118,3 +118,44 @@ galleryPrev.addEventListener('click', function () {
   imageIndex = prevIndex
   galleryViewerImage.src = galleryImages[imageIndex].src
 })
+
+/*!
+ * Blogs
+ */
+
+const Axios = require('axios')
+
+const posts = [{
+  "url": "es-negro",
+  "title": "michel",
+  "tags": ["negro","nasty","grosero"],
+  "previewText": "alsfugasfouasfa",
+  "previewImage": "http://zura.space",
+  "insertedAt": "2016-09-28T00:50:21Z",
+  "html": "<p>kasuhfgasofugsaouf<em>gyaufgsai</em></p>"
+}]
+
+const postsContainer = document.querySelector('.BlogPosts')
+
+posts.forEach(function (post) {
+  const item = document.createElement('li')
+  item.className = 'BlogPost'
+
+  const header = document.createElement('header')
+  header.className = 'BlogPostHeader'
+
+  const title = document.createElement('a')
+  title.textContent = post.title
+  title.className = 'BlogPostTitle'
+
+  const body = document.createElement('div')
+  body.className = 'BlogPostBody'
+
+  header.appendChild(title)
+  body.innerHTML  = post.previewText
+
+  item.appendChild(header)
+  item.appendChild(body)
+
+  postsContainer.appendChild(item)
+})
