@@ -91,7 +91,7 @@ gulp.task('dist:javascript', function () {
     .pipe(source('app.js'))
     .pipe(buffer())
     .pipe(uglify())
-    .pipe(gulp.dest('docs/javascript'))
+    .pipe(gulp.dest('public/javascript'))
 })
 
 gulp.task('dist:images', function (cb) {
@@ -104,8 +104,7 @@ gulp.task('dist:css', function () {
   gulp
     .src(['src/styles/main.styl'])
     .pipe(stylus({
-      compress: true,
-      use: [autoprefixer()]
+      compress: true
     }))
     .pipe(gulp.dest('public/css'));
 })
