@@ -77,10 +77,10 @@ app.post(/\/contact$/, function (req, res) {
     .catch(() => {
       res
         .status(500)
-        .json([
+        .json({
           status: 'Error',
           message: 'Email Not Sent'
-        ])
+        })
     })
 })
 

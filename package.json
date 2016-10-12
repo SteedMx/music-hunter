@@ -4,7 +4,7 @@
   "description": "Music Hunter Web Site",
   "main": "public/javascript/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "./node_modules/.bin/gulp build"
   },
   "keywords": [
     "website",
@@ -13,6 +13,7 @@
   "author": "Michell Ayala <starships@outlook.com>",
   "license": "ISC",
   "dependencies": {
+    "async": "^2.1.1",
     "axios": "0.14.0",
     "body-parser": "1.15.2",
     "express": "4.14.0"
