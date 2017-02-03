@@ -162,47 +162,6 @@ Axios
     console.log(err)
   })
 
-/*!
- * Contact Email Send
- */
-
-const contactForm = document.querySelector('.ContactForm')
-
-const successClose = document.querySelector('#success-close')
-const failureClose = document.querySelector('#failure-close')
-
-const successPopup = document.querySelector('#success-popup')
-const failurePopup = document.querySelector('#failure-popup')
-
-successClose.addEventListener('click', function () {
-  successPopup.dataset.active = 'false'
-})
-
-failureClose.addEventListener('click', function () {
-  failurePopup.dataset.active = 'false'
-})
-
-contactForm.addEventListener('submit', function (event) {
-  event.preventDefault()
-
-  const name = event.target.name.trim()
-  const message = event.target.message.trim()
-  const email = event.target.email.trim()
-
-  Axios
-    .post('/contact', {
-      name,
-      message,
-      email
-    })
-    .then(function () {
-      successPopup.dataset.active = 'true'
-    })
-    .catch(function () {
-      failurePopup.dataset.active = 'true'
-    })
-})
-
 // Function to animate the scroll
 var smoothScroll = function (anchor, duration) {
 

@@ -1,18 +1,23 @@
 .Footer
-  background-color $primary-black
+  background-color $primary-white
   color $primary-white
   font-family 'Florida'
   text-align center
 
   margin 0
-  padding 0
+  padding 2rem
+
+  &Title
+    border-bottom 4px solid $primary-red
+    color $primary-black
+    display inline-block
+    font-size 2rem
 
   &Text
-    margin 0
-    padding 2rem
-
-    &:first-child
-      padding-bottom 0
+    color $primary-black
+    display block
+    margin 1rem 0
+    padding 0
 
   &Icon
     display inline-block
@@ -22,3 +27,4 @@
   &Link
     color $primary-red
     font-weight bold
+    text-decoration none
