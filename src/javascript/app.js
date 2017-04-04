@@ -1,5 +1,16 @@
 'use strict'
 
+const blogLink = document.querySelector('.blog-link')
+const joinLink = document.querySelector('.joinus-link')
+
+blogLink.addEventListener('click', function (event) {
+  location.href = 'http://blog.musichunter.mx';
+})
+
+joinLink.addEventListener('click', function (event) {
+  location.href = 'https://goo.gl/forms/zdMHDGXHhe6s1RPD2';
+})
+
 /*!
  * Popup
  */
